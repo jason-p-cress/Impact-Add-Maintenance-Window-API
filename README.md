@@ -1,11 +1,13 @@
- This policy is an example on how to automate creation of maintenance windows through the use of Impact's policy API. This code includes some of the MWM_AddAllFromFile policy code. 
- 09/18/24 Jason Cress (jcress@us.ibm.com)
+This policy is an example on how to automate creation of maintenance windows through the use of Impact's policy API. This code includes some of the MWM_AddAllFromFile policy code. 
+09/18/24 Jason Cress (jcress@us.ibm.com)
 
-To use this policy, you need to create the following input parameters in the policy settings, and they should all be of type string. Policy settings can be accessed by clicking on the policy settings icon in the policy editor toolbar:
+To use this policy, create a new IPL Impact policy named AA_Add_MWM_Via_REST. (We prepend name here to ensure the policy shows near the top of our policy list).
+
+Next, create the following input parameters in the policy settings, and they should all be of type string. Policy settings can be accessed by clicking on the policy settings icon in the policy editor toolbar:
 
 ![image info](./images/policy-settings-icon.png)
 
-Explanation of input parameter is in parentheses.
+These are the required input parameters, with explanation in parentheses.
 
 windowType (otw=one time window, dow=day of week, dom=day of month, nth=nth day of month)\
 userName\
@@ -24,11 +26,13 @@ After adding the above input parameters, your policy settings input parameter li
   
  example curl to execute this policy through the Impact policy API:
  
+```shell
 curl -k -u \<impactadminuser\>:\<impactadminpassword\> -d @t-win.json \\
-https://\<impactserver>\:9081/restui/policyui/policy/\<policy name you used for the above IPL\>/runwithinputparameters \\ 
+https://\<impactserver>\:9081/restui/policyui/policy/AA_Add_MWM_Via_REST/runwithinputparameters \\ 
 -H "Content-Type: application/json;charset=utf-8" 
+```
 
- where t-win.json file contains:
+...where t-win.json file contains:
 
 ```json
 {
