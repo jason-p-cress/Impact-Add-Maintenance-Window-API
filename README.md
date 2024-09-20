@@ -3,8 +3,8 @@
 
 To use this policy, you need to create the following input parameters in the policy settings, and they should all be of type string:
 
-windowType (otw=one time window, dow=day of week, dom=day of month, nth=nth day of month
-userName
+windowType (otw=one time window, dow=day of week, dom=day of month, nth=nth day of month\
+userName\
 timeZone
 startTime (in the form: HH:MM:SS, with the exception of one time window which should be "YYYY-MM-DD HH:mm:ss")
 endTime (as above)
@@ -20,6 +20,7 @@ curl -k -u impactadmin:impactpassword -d @t-win.json https://<impactserver>:9081
 
  where t-win.json file contains:
 
+```json
 {
   "windowType": "otw",
   "userName": "impactadmin",
@@ -29,6 +30,7 @@ curl -k -u impactadmin:impactpassword -d @t-win.json https://<impactserver>:9081
   "filter": "Node = \"dcmpr01\"",
   "description": "Adding a one time window for Node dcmpr01" 
 }
+```
 
 ... to add a one time window. 
 
@@ -36,6 +38,7 @@ curl -k -u impactadmin:impactpassword -d @t-win.json https://<impactserver>:9081
  Therefore a MWM will be created with any format. See other examples below for day of week, day of month, and nth days:
 
 DAY OF WEEK: 
+```json
 {
     "windowType": "dow",
     "userName": "impactadmin",
@@ -46,8 +49,10 @@ DAY OF WEEK:
     "filter": "Node = \"dcmpr01\"",
     "description": "Adding a day of week window for Node dcmpr01" 
 }
+```
 
 DAY OF MONTH:
+```json
 {
     "windowType": "dom",
     "userName": "impactadmin",
@@ -58,8 +63,10 @@ DAY OF MONTH:
     "filter": "Node = \"dcmpr01\"",
     "description": "Day of month window for the days 7th, 18th, and 19th for node dcmpr01" 
 }
+```
 
 NTH DAY:
+```json
 {
     "windowType": "nth",
     "userName": "impactadmin",
@@ -70,5 +77,6 @@ NTH DAY:
     "nthDay": "fourthSun|fourthSat|fifthSun|fifthSat",
     "description": "Adding an nth day window for node rodcs101"
 }
+```
 
 
