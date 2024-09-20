@@ -29,6 +29,8 @@ After adding the above input parameters, your policy settings input parameter li
 
 ![image info](./images/input-param-list.png)
   
+Finally, save your new policy.
+
 ****Creating a maintenance window via REST API call****
 
 Any tool that can send a json payload to the Impact REST API can thus add a maintenance window, provided the appropriate credentials are provided. In this example, we use curl:
