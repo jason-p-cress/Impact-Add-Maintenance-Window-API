@@ -1,18 +1,26 @@
  This policy is an example on how to automate creation of maintenance windows through the use of Impact's policy API. This code includes some of the MWM_AddAllFromFile policy code. 
  09/18/24 Jason Cress (jcress@us.ibm.com)
 
-To use this policy, you need to create the following input parameters in the policy settings, and they should all be of type string:
+To use this policy, you need to create the following input parameters in the policy settings, and they should all be of type string. Policy settings can be accessed by clicking on the policy settings icon in the policy editor toolbar:
 
-windowType (otw=one time window, dow=day of week, dom=day of month, nth=nth day of month\
+![image info](./images/policy-settings-icon.png)
+
+Explanation of input parameter is in parentheses.
+
+windowType (otw=one time window, dow=day of week, dom=day of month, nth=nth day of month)\
 userName\
-timeZone
-startTime (in the form: HH:MM:SS, with the exception of one time window which should be "YYYY-MM-DD HH:mm:ss")
-endTime (as above)
-filter (a valid OMNIbus alerts.status filter, with double-quotes escaped via backslash as illustrated in the examples below)
-dayOfWeek (Mon,Tue,Wed,Thu,Fri,Sat,Sun, multiples separated by |)
-dayOfMonth (integer value represented as a string, with multiple days separated by |)
-nthDay (first-fifthDAY... e.g. firstSun, thirdSat, etc with multiples separated by |)
-description (freeform text)
+timeZone\
+startTime (in the form: HH:MM:SS, with the exception of one time window which should be "YYYY-MM-DD HH:mm:ss")\
+endTime (as above)\
+filter (a valid OMNIbus alerts.status filter, with double-quotes escaped via backslash as illustrated in the examples below)\
+dayOfWeek (Mon,Tue,Wed,Thu,Fri,Sat,Sun, multiples separated by |)\
+dayOfMonth (integer value represented as a string, with multiple days separated by |)\
+nthDay (first-fifthDAY... e.g. firstSun, thirdSat, etc with multiples separated by |)\
+description (freeform text)\
+
+After adding the above input parameters, your policy settings input parameter list should look like this:
+
+![image info](./images/input-param-list.png)
   
  example curl to execute this policy through the Impact policy API:
  
