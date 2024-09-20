@@ -24,7 +24,9 @@ After adding the above input parameters, your policy settings input parameter li
   
  example curl to execute this policy through the Impact policy API:
  
-curl -k -u impactadmin:impactpassword -d @t-win.json https://<impactserver>:9081/restui/policyui/policy/AA_Add_MWM_Window/runwithinputparameters -H "Content-Type: application/json;charset=utf-8" 
+curl -k -u \<impactadminuser\>:\<impactadminpassword\> -d @t-win.json \\
+https://\<impactserver>\:9081/restui/policyui/policy/\<policy name you used for the above IPL\>/runwithinputparameters \\ 
+-H "Content-Type: application/json;charset=utf-8" 
 
  where t-win.json file contains:
 
